@@ -12,3 +12,17 @@ group-assignment
 4. As a user, I want to be able to compare my results against others.
 5. As a user, I want my experience to be as simple as possible.
 6. As a user, I want to see instant results.
+
+## Requirements
+1. A simple user form.
+2. Type of fuel for heating.
+3. Usage.
+    - Usage for electricity.
+    - Main form of transport.
+    - Type of diet.
+    - Annual flying hours.
+4. A server.
+5. A database.
+6. A production location to serve project files.
+7. A function that saves total carbon footprint into the database.
+8. A webpage that refreshes after form submission.
