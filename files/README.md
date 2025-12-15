@@ -15,14 +15,15 @@ group-assignment
 
 ## Requirements
 1. A simple user form.
-2. Type of fuel for heating.
-3. Usage.
+    - Type of fuel for heating.
+    - Usage.
     - Usage for electricity.
     - Main form of transport.
-    - Type of diet.
+    - Miles.
     - Annual flying hours.
-4. A server.
-5. A database.
-6. A production location to serve project files.
-7. A function that saves total carbon footprint into the database.
-8. A webpage that refreshes after form submission.
+    - Type of diet.
+2. A server.
+3. A database.
+4. A production location to serve project files.
+5. A function that saves total carbon footprint into the database.
+6. A webpage that refreshes after form submission.
