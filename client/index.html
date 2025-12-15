@@ -1,13 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/app.js" defer></script>
+  <title>Your Personal Carbon Footprint Tracker</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Heading Here</h1>
+    </header>
+
+    <section>
+
+      <form>
+        <label for="heatingType">Heating Type</label>
+        <select id="heatingType">
+          <option value="gas">Gas</option>
+          <option value="coal">Coal</option>
+          <option value="wood">Wood</option>
+          <option value="elec">Electric</option>
+        </select>
+
+        <label for="energyUsage">Energy Usage</label>
+        <select id="energyUsage">
+          <option value="l">low</option>
+          <option value="m">medium</option>
+          <option value="h">high</option>
+        </select>
+
+        <label for="busTravel">Bus Travel<br>(miles/day)</label>
+        <input id="busTravel" type="number" min="0" name="busTravel">
+        <label for="carTravel">Car Travel<br>(miles/day)</label>
+        <input id="carTravel" type="number" min="0" name="carTravel">
+        <label for="trainTravel">Train Travel<br>(miles/day)</label>
+        <input id="trainTravel" type="number" min="0" name="trainTravel">
+        <label for="airTravel">Air Travel<br>(miles/year)</label>
+        <input id="airTravel" type="number" min="0" name="airTravel">
+        <button>submit</button>
+      </form>
+
+    </section>
+
+    <section></section>
+
+  </main>
+  <hr>
+
+  <footer>This is the footer</footer>
+
+</body>
+
 </html>

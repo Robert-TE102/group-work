@@ -9,6 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.2.4"
-  }
+    "vite": "^7.3.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
