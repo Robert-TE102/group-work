@@ -12,7 +12,7 @@
 <body>
   <main>
     <header>
-      <h1>Heading Here</h1>
+      <h1>Personal Carbon Footprint Tracker</h1>
     </header>
 
     <section>
@@ -30,27 +30,45 @@
 
         <fieldset id="heatType">
           <legend>Heating</legend>
-          <input id="gasHeat" type="checkbox" name="gasHeat" value="gas">
-          <label for="gasHeat">Gas</label>
-          <input id="coalHeat" type="checkbox" name="coalHeat" value="coal">
-          <label for="coalHeat">Coal</label>
-          <input id="woodHeat" type="checkbox" name="woodHeat" value="wood">
-          <label for="woodHeat">Wood</label>
-          <input id="elecHeat" type="checkbox" name="elecHeat" value="elec">
-          <label for="elecHeat">Electricity</label>
+          <div id="heatField">
+            <span>
+              <input id="gasHeat" type="checkbox" name="gasHeat" value="gas">
+              <label for="gasHeat">Gas</label>
+            </span>
+            <span>
+              <input id="coalHeat" type="checkbox" name="coalHeat" value="coal">
+              <label for="coalHeat">Coal</label>
+            </span>
+            <span>
+              <input id="woodHeat" type="checkbox" name="woodHeat" value="wood">
+              <label for="woodHeat">Wood</label>
+            </span>
+            <span>
+              <input id="elecHeat" type="checkbox" name="elecHeat" value="elec">
+              <label for="elecHeat">Electricity</label>
+            </span>
+          </div>
         </fieldset>
 
 
-        <fieldset>
+        <fieldset id="travel">
           <legend>Travel</legend>
-          <label for="busTravel">Bus Travel<br>(miles/day)</label>
-          <input id="busTravel" type="number" min="0" name="busTravel">
-          <label for="carTravel">Car Travel<br>(miles/day)</label>
-          <input id="carTravel" type="number" min="0" name="carTravel">
-          <label for="trainTravel">Train Travel<br>(miles/day)</label>
-          <input id="trainTravel" type="number" min="0" name="trainTravel">
-          <label for="airTravel">Air Travel<br>(miles/year)</label>
-          <input id="airTravel" type="number" min="0" name="airTravel">
+          <span>
+            <label for="busTravel">Bus Travel<br>(miles/day)</label>
+            <input id="busTravel" type="number" min="0" name="busTravel">
+          </span>
+          <span>
+            <label for="carTravel">Car Travel<br>(miles/day)</label>
+            <input id="carTravel" type="number" min="0" name="carTravel">
+          </span>
+          <span>
+            <label for="trainTravel">Train Travel<br>(miles/day)</label>
+            <input id="trainTravel" type="number" min="0" name="trainTravel">
+          </span>
+          <span>
+            <label for="airTravel">Air Travel<br>(miles/year)</label>
+            <input id="airTravel" type="number" min="0" name="airTravel">
+          </span>
 
         </fieldset>
         <button>submit</button>
@@ -64,7 +82,7 @@
   </main>
   <hr>
 
-  <footer>This is the footer</footer>
+  <footer><p>&#169; Copyright YouCO<sub>2</sub> 2025</p></footer>
 
 </body>
 
