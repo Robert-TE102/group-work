@@ -17,15 +17,10 @@
 
     <section>
 
-      <form>
-        <label for="heatingType">Heating Type</label>
-        <select id="heatingType">
-          <option value="gas">Gas</option>
-          <option value="coal">Coal</option>
-          <option value="wood">Wood</option>
-          <option value="elec">Electric</option>
-        </select>
+      <form id="co2Form">
 
+        <label for="userName">Name</label>
+        <input id="userName" type="text" name="userName">
         <label for="energyUsage">Energy Usage</label>
         <select id="energyUsage">
           <option value="l">low</option>
@@ -33,15 +28,33 @@
           <option value="h">high</option>
         </select>
 
-        <label for="busTravel">Bus Travel<br>(miles/day)</label>
-        <input id="busTravel" type="number" min="0" name="busTravel">
-        <label for="carTravel">Car Travel<br>(miles/day)</label>
-        <input id="carTravel" type="number" min="0" name="carTravel">
-        <label for="trainTravel">Train Travel<br>(miles/day)</label>
-        <input id="trainTravel" type="number" min="0" name="trainTravel">
-        <label for="airTravel">Air Travel<br>(miles/year)</label>
-        <input id="airTravel" type="number" min="0" name="airTravel">
+        <fieldset id="heatType">
+          <legend>Heating</legend>
+          <input id="gasHeat" type="checkbox" name="gasHeat" value="gas">
+          <label for="gasHeat">Gas</label>
+          <input id="coalHeat" type="checkbox" name="coalHeat" value="coal">
+          <label for="coalHeat">Coal</label>
+          <input id="woodHeat" type="checkbox" name="woodHeat" value="wood">
+          <label for="woodHeat">Wood</label>
+          <input id="elecHeat" type="checkbox" name="elecHeat" value="elec">
+          <label for="elecHeat">Electricity</label>
+        </fieldset>
+
+
+        <fieldset>
+          <legend>Travel</legend>
+          <label for="busTravel">Bus Travel<br>(miles/day)</label>
+          <input id="busTravel" type="number" min="0" name="busTravel">
+          <label for="carTravel">Car Travel<br>(miles/day)</label>
+          <input id="carTravel" type="number" min="0" name="carTravel">
+          <label for="trainTravel">Train Travel<br>(miles/day)</label>
+          <input id="trainTravel" type="number" min="0" name="trainTravel">
+          <label for="airTravel">Air Travel<br>(miles/year)</label>
+          <input id="airTravel" type="number" min="0" name="airTravel">
+
+        </fieldset>
         <button>submit</button>
+
       </form>
 
     </section>

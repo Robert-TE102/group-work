@@ -16,7 +16,6 @@ label {
 }
 
 form {
-  text-align: center;
   margin: auto;
 }
 
@@ -24,9 +23,13 @@ form,
 input,
 select {
   width: 100%;
-  max-width: 150px;
+  max-width: 300px;
   /* padding: 1em; */
 
+}
+
+fieldset {
+  margin: 3em;
 }
 
 input,
@@ -43,8 +46,4 @@ img {
 
 button {
   padding: 20px 40px;
-}
-
-footer {
-  
 }
