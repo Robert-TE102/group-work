@@ -19,17 +19,14 @@ form {
   margin: auto;
 }
 
-form,
-input,
-select {
+form, fieldset
+ {
   width: 100%;
   max-width: 300px;
-  /* padding: 1em; */
-
 }
 
 fieldset {
-  margin: 3em;
+  padding: 3em;
 }
 
 input,
