@@ -104,7 +104,7 @@ function eventHandler(submitEvent) {
 		},
 		body: JSON.stringify({totalCO2, name}),
 		});
-		//setTimeout(timerFunc, 3000);
+		setTimeout(timerFunc, 3000);
 	} catch (error) {
 		console.error(error.message);
 	}
