@@ -91,7 +91,7 @@ function eventHandler(submitEvent) {
 		let name = userEntry.userName;
 		const totalCO2 = homeCO2 + travelCO2;
 		// Send emmission data to form.
-		fetch('https://group-project-w2z0.onrender.com//sendForm',{
+		fetch('https://group-project-w2z0.onrender.com/sendForm',{
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -117,7 +117,7 @@ async function getData() {// create 'comments' elements from API object
 	try {
 
 		// TODO: CHANGE TO RENDER 'SERVER URL' WHEN DEPLOYED
-		const response = await fetch("https://group-project-w2z0.onrender.com//readForm");// localhost
+		const response = await fetch("https://group-project-w2z0.onrender.com/readForm");// localhost
 		// const response = await fetch("");
 		// TODO: FIX ERROR HERE!!!
 		const userData = await response.json();// json() convert string to JS object
