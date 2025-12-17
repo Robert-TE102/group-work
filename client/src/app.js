@@ -37,7 +37,6 @@ function eventHandler(submitEvent) {
 		let e = document.getElementById("energyUsage");
 		let value = e.value;
 		userEntry.energyUsage = value;
-		console.log(userEntry.userName);
 		// Extract values
 		const busMiles = userEntry.busTravel;
 		const carMiles = userEntry.carTravel;
@@ -61,7 +60,6 @@ function eventHandler(submitEvent) {
 		//(trainMiles* factor) +
 		//(airMiles* factor)
 		const travelCO2 = (busMiles * busFactor) + (carMiles * carFactor) + (trainMiles * trainFactor) + (airMiles * (airFactor / 365));
-		console.log(`Travel CO2: ${travelCO2}`);
 
 		// HomeCO2 = if energyUseage == low -> if gas == true -> lowgasenergy / number of elements +
 				// etc 
@@ -92,12 +90,8 @@ function eventHandler(submitEvent) {
 		// TotalCO2 = TravelCO2 + HomeCO2
 		let name = userEntry.userName;
 		const totalCO2 = homeCO2 + travelCO2;
-		console.log(`Home CO2: ${homeCO2}`);
-		console.log(`Total CO2: ${totalCO2}`);
-		console.log(JSON.stringify({totalCO2, name}));
-
 		// Send emmission data to form.
-		fetch('http://localhost:8080/sendForm',{
+		fetch('https://group-project-w2z0.onrender.com//sendForm',{
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -123,11 +117,10 @@ async function getData() {// create 'comments' elements from API object
 	try {
 
 		// TODO: CHANGE TO RENDER 'SERVER URL' WHEN DEPLOYED
-		const response = await fetch("http://localhost:8080/readForm");// localhost
+		const response = await fetch("https://group-project-w2z0.onrender.com//readForm");// localhost
 		// const response = await fetch("");
 		// TODO: FIX ERROR HERE!!!
 		const userData = await response.json();// json() convert string to JS object
-		console.log("JS object:", userData);// check data
 
 		// TODO: create object with two arrays, username and footprints
 		for (let i = 0; i < userData.length; i++) {
@@ -138,26 +131,14 @@ async function getData() {// create 'comments' elements from API object
 			// footPrints[i] = Math.ceil(Number(userData[i].totalco2));
 			footPrints[i] = Number(userData[i].totalco2);
 		}
-
 		daTa.names = naMes;
 		daTa.footprints = footPrints;
-
-		console.log(daTa.names);
-		console.log(daTa.footprints);
-
-		// console.log(naMes);
-		// console.log(footPrints);
-		console.log(daTa);
-		// const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
-		// console.log(labels);
 		new Chart(ctx, {
 			type: 'line',
 			data: {
-				// labels: labels,
 				labels: daTa.names,
 				datasets: [{
 					label: 'kg C02 Tracker',
-					// data: [12, 19, 3, 5, 2, 3],
 					data: daTa.footprints,
 					borderWidth: 1
 				}]
@@ -174,30 +155,7 @@ async function getData() {// create 'comments' elements from API object
 
 	} catch (error) {
 		console.error(error);
-		// Note: the exact output may be browser-dependent
 	}
-	// return daTa;
 }
 
 getData();
-
-
-
-// new Chart(ctx, {
-// 	type: 'line',
-// 	data: {
-// 		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-// 		datasets: [{
-// 			label: 'C02 Tracker',
-// 			data: [12, 19, 3, 5, 2, 3],
-// 			borderWidth: 1
-// 		}]
-// 	},
-// 	options: {
-// 		scales: {
-// 			y: {
-// 				beginAtZero: true
-// 			}
-// 		}
-// 	}
-// });
