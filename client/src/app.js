@@ -36,7 +36,7 @@ function eventHandler(submitEvent){
 		let e = document.getElementById("energyUsage");
 		let value = e.value;
 		userEntry.energyUsage = value;
-		console.log(userEntry);
+		console.log(userEntry.userName);
 		// Extract values
 		const busMiles = userEntry.busTravel;
 		const carMiles = userEntry.carTravel;
@@ -64,80 +64,37 @@ function eventHandler(submitEvent){
 		console.log(`Travel CO2: ${travelCO2}`);
 		
 		// HomeCO2 = if energyUseage == low -> if gas == true -> lowgasenergy / number of elements +
-				// if energyUseage == low -> if coal == true -> lowcoalenergy / number of elements +
-				// if energyUseage == low -> if wood == true -> lowwoodenergy / number of elements +
-				// if energyUseage == low -> if elec == true -> lowelecenergy / number of elements 
-				
-				// if energyUseage == med -> if gas == true -> medgasenergy / number of elements +
-				// if energyUseage == med -> if coal == true -> medcoalenergy / number of elements +
-				// if energyUseage == med -> if wood == true -> medwoodenergy / number of elements +
-				// if energyUseage == med -> if elec == true -> medelecenergy / number of elements 
-				
-				// if energyUseage == high -> if gas == true -> highgasenergy / number of elements +
-				// if energyUseage == high -> if coal == true -> highcoalenergy / number of elements +
-				// if energyUseage == high -> if wood == true -> highwoodenergy / number of elements +
-				// if energyUseage == high -> if elec == true -> highelecenergy / number of elements 
-		let homeCO2 = 0;
+				// etc 
+		let homeCO2 = 0;		
 		if(userEntry.energyUsage == 'l'){
-			if(gas == true){
-				const gasCont = lowGas/numChecks;
-				homeCO2 += gasCont;
-			}
-			if(coal == true){
-				const coalCont = lowCoal/numChecks;
-				homeCO2 += coalCont;
-			}
-			if(wood == true){
-				const woodCont = lowWood/numChecks;
-				homeCO2 += woodCont;
-			}
-			if(elec == true){
-				const elecCont = lowElec/numChecks;
-				homeCO2 += elecCont;
-			}
+			if(gas == true){ homeCO2 += lowGas/numChecks; }
+			if(coal == true){ homeCO2 += lowCoal/numChecks; }
+			if(wood == true){ homeCO2 += lowWood/numChecks; }
+			if(elec == true){ homeCO2 += lowElec/numChecks; }
+			homeCO2 += lowElec;
 		} else if(userEntry.energyUsage == 'm'){
-			if(gas == true){
-				const gasCont = medGas/numChecks;
-				homeCO2 += gasCont;
-			}
-			if(coal == true){
-				const coalCont = medCoal/numChecks;
-				homeCO2 += coalCont;
-			}
-			if(wood == true){
-				const woodCont = medWood/numChecks;
-				homeCO2 += woodCont;
-			}
-			if(elec == true){
-				const elecCont = medElec/numChecks;
-				homeCO2 += elecCont;
-			}
+			if(gas == true){ homeCO2 += medGas/numChecks; }
+			if(coal == true){ homeCO2 += medCoal/numChecks; }
+			if(wood == true){ homeCO2 += medWood/numChecks; }
+			if(elec == true){ homeCO2 += medElec/numChecks; }
+			homeCO2 += lowElec;
 		} else if(userEntry.energyUsage == 'h'){
-			if(gas == true){
-				const gasCont = highGas/numChecks;
-				homeCO2 += gasCont;
-			}
-			if(coal == true){
-				const coalCont = highCoal/numChecks;
-				homeCO2 += coalCont;
-			}
-			if(wood == true){
-				const woodCont = highWood/numChecks;
-				homeCO2 += woodCont;
-			}
-			if(elec == true){
-				const elecCont = highElec/numChecks;
-				homeCO2 += elecCont;
-			}
+			if(gas == true){ homeCO2 += highGas/numChecks; }
+			if(coal == true){ homeCO2 += highCoal/numChecks; }
+			if(wood == true){ homeCO2 += highWood/numChecks; }
+			if(elec == true){ homeCO2 += highElec/numChecks; }
+			homeCO2 += lowElec;
 		} else{
 			// return error
+			console.error(`Error Message: error with form input.`);
 		}
 
 		// TotalCO2 = TravelCO2 + HomeCO2
+		let name = userEntry.userName;
 		const totalCO2 = homeCO2 + travelCO2;
 		console.log(`Home CO2: ${homeCO2}`);
 		console.log(`Total CO2: ${totalCO2}`);
-		console.log(`JSON.stringify({totalCO2}): ${JSON.stringify({totalCO2})}`);
+		console.log(JSON.stringify({totalCO2, name}));
 
 		// Send emmission data to form.
 		fetch('http://localhost:8080/sendForm',{
@@ -145,7 +102,7 @@ function eventHandler(submitEvent){
 		headers: {
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({totalCO2}),
+		body: JSON.stringify({totalCO2, name}),
 		});
 		//setTimeout(timerFunc, 3000);
   	} catch(error){
