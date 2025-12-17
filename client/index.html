@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./src/styles.css">
   <script type="module" src="./src/app.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Your Personal Carbon Footprint Tracker</title>
 </head>
 
@@ -50,7 +51,6 @@
           </div>
         </fieldset>
 
-
         <fieldset id="travel">
           <legend>Travel</legend>
           <span>
@@ -77,12 +77,19 @@
 
     </section>
 
-    <section><img src="/images/Gemini_Generated_Image_99hlew99hlew99hl (1).png" alt=""></section>
+    <section style="width:80%;margin:auto;">
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+    </section>
 
   </main>
   <hr>
 
-  <footer><p>&#169; Copyright YouCO<sub>2</sub> 2025</p></footer>
+  <footer>
+    <p>&#169; Copyright YouCO<sub>2</sub> 2025</p>
+  </footer>
 
 </body>
 

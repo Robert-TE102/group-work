@@ -14,28 +14,34 @@ app.listen(PORT, () => console.log(`This app is running on port ${PORT}`));
 console.log(`test line 14`);
 
 app.post("/sendForm", async (req, res) => {
-    try{
+    try {
         const totalCO2 = req.body.totalCO2;
         const query = await db.query(
             `INSERT INTO userData (totalCO2) VALUES ($1)`,
             [totalCO2]
         );
-        res.json({status: "success", values: totalCO2});
-    } catch(error){
-        res.status(500).json({Error: error.message});
+        res.json({ status: "success", values: totalCO2 });
+    } catch (error) {
+        res.status(500).json({ Error: error.message });
     }
 });
 
 app.get('/readForm', async (req, res) => {
-    try{
-        const query = await db.query(`SELECT id, totalCO2 FROM userData;`);
+    try {
+        // const query = await db.query(`SELECT * FROM userData;`);
+        const query = await db.query(`SELECT * FROM (
+   SELECT * FROM userData ORDER BY id DESC LIMIT 20
+)Var1
+   ORDER BY id ASC;`);
         res.json(query.rows);
         console.log(query.rows);
-    } catch(error){
+    } catch (error) {
         console.log("db error: ", error);
-        res.status(500).json({Error: error.message});
+        res.status(500).json({ Error: error.message });
     }
 });
+
+
 
 // app.delete('/:id', async (req, res) => {
 //     try{    
