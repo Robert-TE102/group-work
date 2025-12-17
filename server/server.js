@@ -11,8 +11,6 @@ app.use(express.json());
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`This app is running on port ${PORT}`));
 
-console.log(`test line 14`);
-
 app.post("/sendForm", async (req, res) => {
     try{
         const totalCO2 = req.body.totalCO2;
