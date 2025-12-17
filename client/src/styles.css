@@ -9,30 +9,46 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #444;
   line-height: 150%;
-  background-image: url("/images/Gemini_Generated_Image_99hlew99hlew99hl (1).png");
+  background-image: url(../public/images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
+  opacity: 0.9;
+  background-position: center;
+  background-size: cover;
 }
 
 main {
-  padding: 0 8% 8% 8%;
+  padding: 0.5 8% 8% 8%;
 }
 
 img {
   display: block;
-  width: 100%;
-  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 }
 
 h1 {
-  font-size: 300%;
+  font-size: 30vh;
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  font-size: 170%;
   line-height: 150%;
+  text-align: center;
+  height: 200px;
+  color: black;
 }
 
 label {
   line-height: 130%;
+  color: black;
 }
 
 legend {
   font-size: 150%;
+  text-align: left;
+  color: black;
 }
 
 form {
@@ -48,10 +64,16 @@ fieldset {
 fieldset {
   padding: 1.6em;
   margin-bottom: 3em;
+  background-image: url(../public/images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
+  /*background-color: lightgreen;*/
+  background-position: center;
+  background-size: 80%;
+  color: black;
 }
 
 input {
   width: 100%;
+  color: black;
 }
 
 #userName {
@@ -63,7 +85,8 @@ select#energyUsage {
   max-width: 200px;
 }
 
-#userName, #energyUsage {
+#userName,
+#energyUsage {
   margin: 0.6em 0 3em 0;
 }
 
@@ -99,7 +122,9 @@ select {
 
 button {
   padding: 20px 40px;
+  color: black;
 }
+
 #travel span {
   padding: 1em;
   display: flex;
@@ -110,25 +135,29 @@ header {
   text-align: center;
 }
 
-header, footer {
+header,
+footer {
   padding: 50px 10% 50px 10%;
 }
 
 footer {
   text-align: center;
+  font-size: 15px;
+  color: black;
 }
 
 @media screen and (max-width: 600px) {
   #travel span {
     flex-direction: column;
-    align-items:center;
+    align-items: center;
   }
   #travel label {
     text-align: center;
     margin-bottom: 1em;
   }
+}
 
-  h1 {
-    font-size: 250%;
-  }
+button:hover {
+  cursor: pointer;
+  color: blue;
 }
