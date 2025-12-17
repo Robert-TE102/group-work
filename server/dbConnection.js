@@ -9,6 +9,6 @@ export const db = new pg.Pool({
 db.query(
 `CREATE TABLE IF NOT EXISTS userData(
     id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(255),
-    totalCO2 NUMERIC
+    totalco2 NUMERIC,
+    username VARCHAR(255)
 )`);
