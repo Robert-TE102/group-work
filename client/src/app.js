@@ -155,4 +155,3 @@ function eventHandler(submitEvent){
 
 userForm.addEventListener('submit', eventHandler);
 
-
