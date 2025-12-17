@@ -11,14 +11,15 @@ app.use(express.json());
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`This app is running on port ${PORT}`));
 
-console.log(`test line 14`);
-
 app.post("/sendForm", async (req, res) => {
     try {
         const totalCO2 = req.body.totalCO2;
+        const userName = req.body.name;
+        console.log(req.body);
+        console.log(totalCO2);
         const query = await db.query(
-            `INSERT INTO userData (totalCO2) VALUES ($1)`,
-            [totalCO2]
+            `INSERT INTO userdata (totalco2, username) VALUES ($1, $2)`,
+            [totalCO2, userName]
         );
         res.json({ status: "success", values: totalCO2 });
     } catch (error) {
