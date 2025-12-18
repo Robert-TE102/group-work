@@ -22,7 +22,9 @@ const trainFactor = 0.03652;
 const airFactor = 0.22927;
 
 const userForm = document.getElementById("co2Form")
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById("myChart");
+const resUlt = document.getElementById("result");
+const pResult = document.getElementById("personalResult");
 
 function timerFunc() {
 	location.reload();
@@ -89,7 +91,8 @@ function eventHandler(submitEvent) {
 
 		// TotalCO2 = TravelCO2 + HomeCO2
 		let name = userEntry.userName;
-		const totalCO2 = homeCO2 + travelCO2;
+		const totalCO2 = homeCO2 + travelCO2;	
+
 		// Send emmission data to form.
 		// fetch('https://group-project-w2z0.onrender.com/sendForm',{
 		fetch('http://localhost:8080/sendForm',{
@@ -153,7 +156,10 @@ async function getData() {// create 'comments' elements from API object
 				}
 			}
 		});
-
+		resUlt.innerText=userData[19].totalco2;	
+		pResult.innerText=userData[19].username + "'s Result";
+		// console.log(userData);
+		userForm.reset();
 
 	} catch (error) {
 		console.error(error);

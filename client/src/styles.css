@@ -16,7 +16,7 @@ body {
 
 button,
 select,
-[type="checkbox"],
+[type=checkbox],
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button,
 input[type=number] {
@@ -48,6 +48,7 @@ h2 {
 }
 
 label {
+  text-align: center;
   line-height: 130%;
 }
 
@@ -56,91 +57,84 @@ legend {
 }
 
 form {
-  margin: 8% auto 20% auto;
+  padding: 5%;
+  background-color: #fafafa;
+  text-align: center;
+  margin: 8% auto 0 auto;
 }
 
 form,
 fieldset {
-	text-align: center;
-  	width: 100%;
- 	max-width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 
 fieldset {
   padding: 1.6em;
   margin-bottom: 3em;
-  /* background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png); */
-  /*background-color: lightgreen;*/
-  /* background-position: center; */
-  /* background-size: 80%; */
   background-color: #f0fbef;
 }
 
 input {
-	justify-content: center;
-  	width: 100%;
-  	color: black;
-}
-
-#userName {
-  	max-width: 500px;
+  width: 100%;
+  text-align: center;
 }
 
 select#energyUsage {
-	justify-content: center;
-  	width: 50%;
-  	max-width: 200px;
+  justify-content: center;
+  width: 50%;
+  max-width: 200px;
 }
 
 #userName,
 #energyUsage {
-  	margin: 0.6em 0 3em 0;
+  margin: 0.6em 0 3em 0;
 }
 
 #heatType {
-  	text-align: center;
+  text-align: center;
 }
 
 input,
 select {
-	justify-content: center;
-  	display: block;
-  	font-size: 120%;
-  	padding: 0.5em;
+  justify-content: center;
+  display: block;
+  font-size: 120%;
+  padding: 0.5em;
 }
 
-[type="checkbox"] {
-  	margin: 0.5em 0 0.5em 0;
+[type=checkbox] {
+  margin: 0.5em 0 0.5em 0;
 }
 
 #heatField {
-  	display: flex;
-  	flex-wrap: wrap;
-  	justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #heatField span {
-  	padding: 2em 0 2em 0;
-  	width: 120px;
+  padding: 2em 0 2em 0;
+  width: 120px;
 }
 
 #travel input {
-  	max-width: 150px;
+  max-width: 150px;
 }
 
 #travel span {
-  	padding: 1em;
-  	display: flex;
-  	justify-content: space-around;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
 }
 
 header {
-  	text-align: center;
+  text-align: center;
 }
 
 header,
 footer {
-  	padding: 50px 10% 50px 10%;
+  padding: 50px 10% 50px 10%;
 }
 
 #graph {
@@ -154,10 +148,6 @@ footer {
 
 @media screen and (max-width: 600px) {
 
-  /* h1 {
-    font-size: 500%;
-  } */
-
   #travel span {
     flex-direction: column;
     align-items: center;
@@ -169,9 +159,7 @@ footer {
   }
 }
 
-
-
-#submit{
+#submit {
   border-radius: 10px;
   padding: 15px;
   border: 4px, ridge, rgb(170, 170, 243);
@@ -179,12 +167,12 @@ footer {
   font-size: large;
 }
 
-#submit:hover{
-	scale: 1.05;
+#submit:hover {
+  scale: 1.05;
 }
 
-#submit:active{
-	scale: 1;
+#submit:active {
+  scale: 1;
 }
 
 @media screen and (max-width: 800px) {
@@ -203,4 +191,32 @@ footer {
   h2 {
     font-size: 240%;
   }
+}
+
+label {
+  display: block;
+}
+
+#energyUsage {
+  display: inline-block;
+}
+
+#resultWrap {
+  margin: 8% 0 0 0;
+}
+
+#resultWrap p {
+  text-align: center;
+  padding: 1em;
+}
+
+#result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #eee;
+  width: 200px;
+  height: 100px;
+  font-size: 200%;
+  margin: 0 auto 15% auto;
 }

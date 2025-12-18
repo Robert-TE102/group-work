@@ -23,11 +23,11 @@
 
         <label for="userName">Name</label>
         <input id="userName" type="text" name="userName" required>
-        <label for="energyUsage">Energy Usage</label>
+        <label for="energyUsage">Home Energy Usage</label>
         <select id="energyUsage">
-          <option value="l">low</option>
-          <option value="m">medium</option>
-          <option value="h">high</option>
+          <option value="l">Low</option>
+          <option value="m">Medium</option>
+          <option value="h">High</option>
         </select>
 
         <fieldset id="heatType">
@@ -76,6 +76,12 @@
 
       </form>
 
+      <div id="resultWrap">
+        <p id="personalResult">Your Result</p>
+        <span id="result" aria-label="your co2 result is"></span>
+      </div>
+
+
     </section>
 
     <section style="width:80%;margin:auto;">
@@ -83,12 +89,12 @@
         <canvas id="myChart"></canvas>
       </div>
 
-      <img src="/images/images/Gemini_Generated_Image_99hlew99hlew99hl (1).png" alt="youco2 hero image" aria-label="image showing website logo about carbon footprint reduction">
+      <img src="/images/images/Gemini_Generated_Image_99hlew99hlew99hl (1).png" alt="youco2 hero image"
+        aria-label="image showing website logo about carbon footprint reduction">
 
     </section>
 
   </main>
-  <hr>
 
   <footer>
     <p>&#169; Copyright YouCO<sub>2</sub> 2025</p>
