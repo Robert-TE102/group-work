@@ -9,7 +9,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #444;
   line-height: 150%;
-  background-image: url(../public/images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
+  background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
   opacity: 0.9;
   background-position: center;
   background-size: cover;
@@ -64,7 +64,7 @@ fieldset {
 fieldset {
   padding: 1.6em;
   margin-bottom: 3em;
-  background-image: url(../public/images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
+  background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
   /*background-color: lightgreen;*/
   background-position: center;
   background-size: 80%;
