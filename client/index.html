@@ -19,34 +19,34 @@
 
     <section>
 
-      <form id="co2Form">
+      <form id="co2Form" aria-label="Personal CO2 emmissions form">
 
         <label for="userName">Name</label>
-        <input id="userName" type="text" name="userName" required>
+        <input id="userName" type="text" name="userName" required aria-label="Name input">
         <label for="energyUsage">Energy Usage</label>
         <select id="energyUsage">
-          <option value="l">low</option>
-          <option value="m">medium</option>
-          <option value="h">high</option>
+          <option value="l" aria-label="Low home energy user">low</option>
+          <option value="m" aria-label="Medium home energy user">medium</option>
+          <option value="h" aria-label="High home energy user">high</option>
         </select>
 
         <fieldset id="heatType">
           <legend>Heating</legend>
           <div id="heatField">
             <span>
-              <input id="gasHeat" type="checkbox" name="gasHeat" value="gas">
+              <input id="gasHeat" type="checkbox" name="gasHeat" value="gas" aria-label="Gas heating user">
               <label for="gasHeat">Gas</label>
             </span>
             <span>
-              <input id="coalHeat" type="checkbox" name="coalHeat" value="coal">
+              <input id="coalHeat" type="checkbox" name="coalHeat" value="coal" aria-label="Coal heating user">
               <label for="coalHeat">Coal</label>
             </span>
             <span>
-              <input id="woodHeat" type="checkbox" name="woodHeat" value="wood">
+              <input id="woodHeat" type="checkbox" name="woodHeat" value="wood" aria-label="Wood heating user">
               <label for="woodHeat">Wood</label>
             </span>
             <span>
-              <input id="elecHeat" type="checkbox" name="elecHeat" value="elec">
+              <input id="elecHeat" type="checkbox" name="elecHeat" value="elec" aria-label="Electric heating user">
               <label for="elecHeat">Electricity</label>
             </span>
           </div>
@@ -56,23 +56,23 @@
           <legend>Travel</legend>
           <span>
             <label for="busTravel">Bus Travel<br>(miles/day)</label>
-            <input id="busTravel" type="number" min="0" name="busTravel">
+            <input id="busTravel" type="number" min="0" name="busTravel" aria-label="Bus travel input miles per day">
           </span>
           <span>
             <label for="carTravel">Car Travel<br>(miles/day)</label>
-            <input id="carTravel" type="number" min="0" name="carTravel">
+            <input id="carTravel" type="number" min="0" name="carTravel" aria-label="Car travel input miles per day">
           </span>
           <span>
             <label for="trainTravel">Train Travel<br>(miles/day)</label>
-            <input id="trainTravel" type="number" min="0" name="trainTravel">
+            <input id="trainTravel" type="number" min="0" name="trainTravel" aria-label="Train travel input miles per day">
           </span>
           <span>
             <label for="airTravel">Air Travel<br>(miles/year)</label>
-            <input id="airTravel" type="number" min="0" name="airTravel">
+            <input id="airTravel" type="number" min="0" name="airTravel" aria-label="Air travel input miles per year">
           </span>
 
         </fieldset>
-        <button id="submit">Submit</button>
+        <button id="submit" aria-label="Submit">Submit</button>
 
       </form>
 
