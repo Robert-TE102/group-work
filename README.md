@@ -1,5 +1,4 @@
-# group-work
-group-assignment
+# Group Assignment
 
 ## Our User Stories
 1. As a user, I want to be able to enter my name, and carbon footprint stats into a form.
@@ -29,8 +28,8 @@ group-assignment
 
 ## Given Project Requirements
 1. Structured HTML & CSS
-    - We have structured and semantic HTML and CSS.
-    - We have used CSS commenting to create sections and have used pseudo-classes.
+    - We have structured and semantic HTML and CSS to make a very user friendly easy to use design.
+    - We have used pseudo-classes.
 2. Attractive, Effective UI
     - We have a responsive UI and a layout that suits an easy to use UX.
     - We have a chart that updates with user inputs, and shows user information upon mouse hover over data points.
@@ -55,3 +54,11 @@ group-assignment
 10. Collaboration
     - We completed tasks as agreed and had names against tasks on our kanban board. We used pair programming, and shared progress as we went. We ensured we had breaks when we wanted/needed to. We did not have any conflict but our plan for conflict was to remain professional and reassess the plan and go with group majority for any decisions needed during conflict.
     - We remained flexible during programming and so sometimes switched between single and pair programming when needed.
+
+## Stretch Goals
+
+- Submit button redesign.
+- Background image with translucent overlay.
+- Further investigation into chart design and appearance.
+- Page design and appearance.
+- Delete user via username.
