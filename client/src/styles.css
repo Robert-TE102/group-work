@@ -9,50 +9,54 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #444;
   line-height: 150%;
-  background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
-  opacity: 0.9;
-  background-position: center;
-  background-size: cover;
+  /* background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png); */
+  /* background-position: center; */
+  /* background-size: cover; */
+}
+
+button,
+select,
+[type="checkbox"],
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number] {
+  cursor: pointer;
 }
 
 main {
-  padding: 0.5 8% 8% 8%;
+  padding: 5% 8% 8% 8%;
 }
 
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
+  width: 100%;
+  height: auto;
 }
 
 h1 {
-  font-size: 30vh;
+  color: #5fcf4e;
+  font-size: 800%;
   text-align: center;
-  color: black;
 }
 
 h2 {
-  font-size: 170%;
+  color: #7a7a7a;
+  margin-top: 200px;
+  font-size: 300%;
   line-height: 150%;
   text-align: center;
-  height: 200px;
-  color: black;
 }
 
 label {
   line-height: 130%;
-  color: black;
 }
 
 legend {
   font-size: 150%;
-  text-align: left;
-  color: black;
 }
 
 form {
-  margin: 8% auto 10% auto;
+  margin: 8% auto 20% auto;
 }
 
 form,
@@ -64,11 +68,11 @@ fieldset {
 fieldset {
   padding: 1.6em;
   margin-bottom: 3em;
-  background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png);
+  /* background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png); */
   /*background-color: lightgreen;*/
-  background-position: center;
-  background-size: 80%;
-  color: black;
+  /* background-position: center; */
+  /* background-size: 80%; */
+  background-color: #f0fbef;
 }
 
 input {
@@ -122,7 +126,6 @@ select {
 
 button {
   padding: 20px 40px;
-  color: black;
 }
 
 #travel span {
@@ -140,17 +143,26 @@ footer {
   padding: 50px 10% 50px 10%;
 }
 
+#graph {
+  background-color: #fff;
+}
+
 footer {
   text-align: center;
   font-size: 15px;
-  color: black;
 }
 
 @media screen and (max-width: 600px) {
+
+  /* h1 {
+    font-size: 500%;
+  } */
+
   #travel span {
     flex-direction: column;
     align-items: center;
   }
+
   #travel label {
     text-align: center;
     margin-bottom: 1em;
@@ -158,6 +170,23 @@ footer {
 }
 
 button:hover {
-  cursor: pointer;
   color: blue;
+}
+
+@media screen and (max-width: 800px) {
+
+  h1 {
+    font-size: 500%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  h1 {
+    font-size: 380%;
+  }
+
+  h2 {
+    font-size: 240%;
+  }
 }

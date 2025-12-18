@@ -13,7 +13,8 @@
 <body>
   <main>
     <header>
-      <h1>Personal Carbon Footprint Tracker</h1>
+      <h1>YouCO<sub>2</sub></h1>
+      <h2>Personal Carbon Footprint Tracker</h2>
     </header>
 
     <section>
@@ -23,7 +24,7 @@
         <label for="userName">Name</label>
         <input id="userName" type="text" name="userName" required>
         <label for="energyUsage">Energy Usage</label>
-        <select id="energyUsage" required>
+        <select id="energyUsage">
           <option value="l">low</option>
           <option value="m">medium</option>
           <option value="h">high</option>
@@ -78,9 +79,11 @@
     </section>
 
     <section style="width:80%;margin:auto;">
-      <div>
+      <div id="graph">
         <canvas id="myChart"></canvas>
       </div>
+
+      <img src="/images/images/Gemini_Generated_Image_99hlew99hlew99hl (1).png" alt="youco2 hero image" aria-label="image showing website logo about carbon footprint reduction">
 
     </section>
 
