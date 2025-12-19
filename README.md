@@ -62,3 +62,10 @@
 - Further investigation into chart design and appearance.
 - Page design and appearance.
 - Delete user via username.
+
+## Lighthouse Report
+
+- Performance: 100%
+- Accessibility: 95%
+- Best Practice: 100%
+- SEO: 91%
