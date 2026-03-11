@@ -2,24 +2,30 @@ let gas = false;
 let coal = false;
 let wood = false;
 let elec = false;
+let oil = false;
 
-const lowGas = 0.018029 / 2;
-const medGas = 0.018029;
-const highGas = 0.018029 * 1.5;
-const lowCoal = 0.3019 / 2;
-const medCoal = 0.3019;
-const highCoal = 0.3019 * 1.5;
-const lowWood = 0.165 / 2;
-const medWood = 0.165;
-const highWood = 0.165 * 1.5;
-const lowElec = 0.3369 / 2;
-const medElec = 0.3369;
-const highElec = 0.3369 * 1.5;
+// units are in kg of CO2 per kWh.
+const lowGas = 4*0.18259;
+const medGas = 8*0.18259;
+const highGas = 12*0.18259;
+const lowCoal = 4*0.31459;
+const medCoal = 8*0.31459;
+const highCoal = 12*0.31459;
+const lowWood = 4*0.165;
+const medWood = 8*0.165;
+const highWood = 12*0.165;
+const lowElec = 4*0.3369;
+const medElec = 8*0.3369;
+const highElec = 12*0.3369;
+const lowOil = 4*0.26709;
+const medOil = 8*0.26709;
+const highOil = 12*0.26709;
 
+// units are kg CO2 per mile.
 const busFactor = 0.12525;
-const carFactor = 0.27201;
-const trainFactor = 0.03652;
-const airFactor = 0.22927;
+const carFactor = 0.27368;
+const trainFactor = 0.1;
+const airFactor = 0.25;
 
 const userForm = document.getElementById("co2Form")
 const ctx = document.getElementById("myChart");
@@ -56,11 +62,10 @@ function eventHandler(submitEvent) {
 		if (userEntry.elecHeat !== undefined) {
 			elec = true;
 		}
+		if (userEntry.oilHeat !== undefined) {
+			oil = true;
+		}
 		//// Calculate average CO2 emmission.
-		// TravelCO2 = (busMiles* factor) +
-		//(carMiles* factor) +
-		//(trainMiles* factor) +
-		//(airMiles* factor)
 		const travelCO2 = (busMiles * busFactor) + (carMiles * carFactor) + (trainMiles * trainFactor) + (airMiles * (airFactor / 365));
 
 		// HomeCO2 = if energyUseage == low -> if gas == true -> lowgasenergy / number of elements +
@@ -71,30 +76,38 @@ function eventHandler(submitEvent) {
 			if(coal == true){ homeCO2 += lowCoal/numChecks; }
 			if(wood == true){ homeCO2 += lowWood/numChecks; }
 			if(elec == true){ homeCO2 += lowElec/numChecks; }
+			if(oil == true){ homeCO2 += lowOil/numChecks; }
 			homeCO2 += lowElec;
 		} else if(userEntry.energyUsage == 'm'){
 			if(gas == true){ homeCO2 += medGas/numChecks; }
 			if(coal == true){ homeCO2 += medCoal/numChecks; }
 			if(wood == true){ homeCO2 += medWood/numChecks; }
 			if(elec == true){ homeCO2 += medElec/numChecks; }
+			if(oil == true){ homeCO2 += medOil/numChecks; }
 			homeCO2 += lowElec;
 		} else if(userEntry.energyUsage == 'h'){
 			if(gas == true){ homeCO2 += highGas/numChecks; }
 			if(coal == true){ homeCO2 += highCoal/numChecks; }
 			if(wood == true){ homeCO2 += highWood/numChecks; }
 			if(elec == true){ homeCO2 += highElec/numChecks; }
+			if(oil == true){ homeCO2 += highOil/numChecks; }
 			homeCO2 += lowElec;
 		} else{
 			// return error
 			console.error(`Error Message: error with form input.`);
 		}
 
+		console.log(homeCO2);
+
 		// TotalCO2 = TravelCO2 + HomeCO2
 		let name = userEntry.userName;
 		const total = homeCO2 + travelCO2;	
 		const totalCO2 = parseFloat(total.toFixed(2));
+
+		console.log(totalCO2);
+
 		// Send emmission data to form.
-		fetch('https://group-project-w2z0.onrender.com/sendForm',{
+		fetch('https://co2-project-server.onrender.com/sendForm',{
 		//fetch('http://localhost:8080/sendForm',{
 		method: "POST",
 		headers: {
@@ -102,7 +115,7 @@ function eventHandler(submitEvent) {
 		},
 		body: JSON.stringify({totalCO2, name}),
 		});
-		setTimeout(timerFunc, 3000);
+		setTimeout(timerFunc, 2000);
 	} catch (error) {
 		console.error(error.message);
 	}
@@ -121,7 +134,7 @@ async function getData() {// create 'comments' elements from API object
 	try {
 
 		// TODO: CHANGE TO RENDER 'SERVER URL' WHEN DEPLOYED
-		const response = await fetch("https://group-project-w2z0.onrender.com/readForm");
+		const response = await fetch("https://co2-project-server.onrender.com/readForm");
 		//const response = await fetch("http://localhost:8080/readForm");// localhost
 		// TODO: FIX ERROR HERE!!!
 		const userData = await response.json();// json() convert string to JS object
@@ -155,9 +168,9 @@ async function getData() {// create 'comments' elements from API object
 				}
 			}
 		});
-		resUlt.innerText=userData[19].totalco2;	
-		pResult.innerText=userData[19].username + "'s Result";
-		// console.log(userData);
+		resUlt.innerText=userData[userData.length - 1].totalco2;	
+		pResult.innerText=userData[userData.length - 1].username + "'s Result (kg CO2 per day)";
+		console.log(userData);
 		userForm.reset();
 
 	} catch (error) {
